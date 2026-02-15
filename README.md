@@ -1,26 +1,26 @@
-# 🎵 AI Music Composer
+# AI Music Composer
 
 An interactive neural network that composes original music in real time using a character-level LSTM trained on symbolic music notation.
 
-👉 **Live demo:** https://ai-music-lab.streamlit.app
+Live demo: https://ai-music-lab.streamlit.app
 
 This project explores sequence modeling and generative AI by treating music as a language modeling problem. The system learns the grammar of ABC music notation and generates new compositions token-by-token.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎼 Real-time AI music composition
-- 🎚 Creativity control via temperature scaling
-- 📏 Adjustable composition length
-- 🎧 Built-in audio playback
-- 🌈 Live animated audio visualizer
-- ⬇ Download generated music
-- 🌐 Interactive Streamlit web interface
+- Real-time AI music composition
+- Creativity control via temperature scaling
+- Adjustable composition length
+- Built-in audio playback
+- Live animated audio visualizer
+- Download generated music
+- Interactive Streamlit web interface
 
 ---
 
-## 🧠 Model Overview
+## Model Overview
 
 The model is a character-level LSTM trained on ~800 folk songs in ABC notation.
 
@@ -46,17 +46,17 @@ Conceptually similar to language modeling, but applied to musical structure.
 
 ---
 
-## 🏗 Tech Stack
+## Tech Stack
 
-- **PyTorch** — neural network training
-- **NumPy** — data processing
-- **Streamlit** — interactive UI
-- **Web Audio API** — live visualizers
-- **Comet ML** — experiment tracking
+- PyTorch — neural network training
+- NumPy — data processing
+- Streamlit — interactive UI
+- Web Audio API — live visualizers
+- Comet ML — experiment tracking
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 Clone the repository:
 
@@ -85,27 +85,27 @@ http://localhost:8501
 
 ---
 
-## 🌐 Run in Browser
+## Run in Browser
 
 No installation required:
 
-👉 https://ai-music-lab.streamlit.app
+https://ai-music-lab.streamlit.app
 
 ---
 
-## 🎛 Usage
+## Usage
 
-1. Enter a **seed string** to influence style  
-2. Adjust **creativity** (temperature)  
-3. Set **song length**  
-4. Press **Compose Music**  
+1. Enter a seed string to influence style  
+2. Adjust creativity (temperature)  
+3. Set song length  
+4. Press Compose Music  
 5. Listen, visualize, and download
 
 Each composition is unique.
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 app.py          → Streamlit interface
@@ -118,21 +118,23 @@ songs.txt       → training dataset
 
 ---
 
-## 🔬 What This Project Demonstrates
+## What This Project Demonstrates
 
 - Sequence modeling with LSTMs
 - Character-level generative modeling
 - Training + inference pipeline design
 - Interactive ML deployment
 - Audio synthesis + visualization
-- ML → product integration
+- ML to product integration
 
 Full lifecycle:
 
-**data → modeling → training → inference → UI → deployment**
+data → modeling → training → inference → UI → deployment
 
 ---
 
-## 👤 Author
+## Author
 
-Built by **Vasanth Bhaskara**
+Built by Vasanth Bhaskara
+
+Exploring generative AI, ML systems, and interactive neural applications.
