@@ -145,42 +145,78 @@ model = load_model()
 # ---------- Sidebar ----------
 
 st.sidebar.title("🎛 Control Panel")
+st.sidebar.markdown("### 🎼 Generation Settings")
 
-seed = st.sidebar.text_input("Seed text", "X")
-temperature = st.sidebar.slider("Creativity 🎨", 0.2, 1.5, 0.8)
-length = st.sidebar.slider("Song length 🎼", 100, 2000, 500)
+seed = st.sidebar.text_input(
+    "Seed text",
+    "X",
+    help="Starting characters influence musical style."
+)
+
+st.sidebar.caption("Example: X | X:1 | T:My Tune")
+
+temperature = st.sidebar.slider(
+    "Creativity",
+    0.2, 1.5, 0.8,
+    help="Low = structured. High = experimental."
+)
+
+length = st.sidebar.slider(
+    "Song length",
+    100, 2000, 500,
+    help="Number of characters generated."
+)
 
 viz_mode = st.sidebar.selectbox(
     "Visualizer Style",
-    ["🪩 Spectrum Bars", "🌊 Wave Neon", "🔥 Radial Pulse"]
+    ["Spectrum Bars", "Wave Neon", "Radial Pulse"]
 )
 
 mode_map = {
-    "🪩 Spectrum Bars": "bars",
-    "🌊 Wave Neon": "wave",
-    "🔥 Radial Pulse": "circle"
+    "Spectrum Bars": "bars",
+    "Wave Neon": "wave",
+    "Radial Pulse": "circle"
 }
 
-compose = st.sidebar.button("🎶 Compose Music")
+st.sidebar.markdown("---")
+compose_sidebar = st.sidebar.button("🎶 Compose Music")
 
 # ---------- Main UI ----------
 
 st.title("🎵 AI Music Composer")
 st.subheader("Neural network generating music in real-time")
 
+st.info("📱 On mobile? Tap the arrow on the top left to open settings.")
+
+with st.expander("ℹ️ What does this app do?"):
+    st.markdown("""
+This AI composes music using a neural network trained on symbolic notation.
+
+• Seed text influences style  
+• Creativity controls randomness  
+• Length controls composition size  
+""")
+
+st.markdown("### 🎶 Ready to compose?")
+st.caption("Adjust settings in sidebar, then press compose.")
+
+compose_main = st.button("🎵 Compose Music", use_container_width=True)
+
+compose = compose_sidebar or compose_main
+
 col1, col2 = st.columns([1,1])
+
+# ---------- Generation ----------
 
 if compose:
 
     progress = st.progress(0)
     eta = st.empty()
-
     start = time.time()
 
     for i in range(100):
         time.sleep(0.01)
         progress.progress(i+1)
-
         elapsed = time.time() - start
         remaining = elapsed * (100/(i+1) - 1)
         eta.text(f"⏳ ETA: {remaining:.1f}s")
@@ -206,7 +242,7 @@ if compose:
 
     with col2:
         st.subheader("Audio + Live Visualizer")
-        st.caption("🎧 Tip: press play to activate the live visualizer")
+        st.caption("🎧 Press play to activate animation")
 
         animated_visualizer(audio_bytes, mode_map[viz_mode])
 
@@ -218,4 +254,4 @@ if compose:
         )
 
 st.markdown("---")
-st.caption("Built with PyTorch + Streamlit • Neural Music Generation Demo")
+st.caption("Built by Vasanth Bhaskara • AI Music Composer")
