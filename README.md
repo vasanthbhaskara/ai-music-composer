@@ -4,6 +4,8 @@ An interactive neural network that composes original music in real time using a 
 
 Live demo: https://ai-music-lab.streamlit.app
 
+<img width="2838" height="1500" alt="image" src="https://github.com/user-attachments/assets/b3d06eae-9177-43d9-a4c7-7955a5ad4ff8" />
+
 This project explores sequence modeling and generative AI by treating music as a language modeling problem. The system learns the grammar of ABC music notation and generates new compositions token-by-token.
 
 ---
