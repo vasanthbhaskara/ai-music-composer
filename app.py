@@ -115,7 +115,7 @@ def animated_visualizer(audio_bytes, mode="bars"):
 
 # ---------- Page Config ----------
 
-st.set_page_config(page_title="AI Music Composer", page_icon="🎵", layout="wide")
+st.set_page_config(page_title="AI Music Lab", page_icon="🎵", layout="wide")
 
 # ---------- Load Dataset ----------
 
@@ -181,7 +181,7 @@ mode_map = {
 st.sidebar.markdown("---")
 # ---------- Main UI ----------
 
-st.title("🎵 AI Music Composer")
+st.title("🎵 AI Music Lab")
 st.subheader("Neural network generating music in real-time")
 
 st.info("📱 On mobile? Tap the arrow on the top left to open settings.")
@@ -252,4 +252,4 @@ if compose:
         )
 
 st.markdown("---")
-st.caption("Built by Vasanth Bhaskara • AI Music Composer")
+st.caption("Built by Vasanth Bhaskara • AI Music Lab")
