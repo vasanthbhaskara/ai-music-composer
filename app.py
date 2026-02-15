@@ -198,9 +198,7 @@ This AI composes music using a neural network trained on symbolic notation.
 st.markdown("### 🎶 Ready to compose?")
 st.caption("Adjust settings in sidebar, then press compose.")
 
-compose_main = st.button("🎵 Compose Music", use_container_width=True)
-
-compose = compose_main
+compose = st.button("🎵 Compose Music", use_container_width=True)
 
 col1, col2 = st.columns([1,1])
 
@@ -231,6 +229,7 @@ if compose:
         )
 
     st.balloons()
+    st.snow()
 
     with col1:
         st.subheader("Generated ABC Score")
