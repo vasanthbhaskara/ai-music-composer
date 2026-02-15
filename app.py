@@ -179,8 +179,6 @@ mode_map = {
 }
 
 st.sidebar.markdown("---")
-compose_sidebar = st.sidebar.button("🎶 Compose Music")
-
 # ---------- Main UI ----------
 
 st.title("🎵 AI Music Composer")
@@ -202,7 +200,7 @@ st.caption("Adjust settings in sidebar, then press compose.")
 
 compose_main = st.button("🎵 Compose Music", use_container_width=True)
 
-compose = compose_sidebar or compose_main
+compose = compose_main
 
 col1, col2 = st.columns([1,1])
 
